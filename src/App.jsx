@@ -4,7 +4,7 @@ import EditSection from "./EditSection";
 import Resume from "./Resume";
 
 export default function App() {
-  const [userInfo, setUserInfo] = useState({ name: "", email: "", phone: "", education: "", work: ""});
+  const [userInfo, setUserInfo] = useState({ name: "Jake Ryan", email: "", phone: "", LinkedIn: "", education: "", work: ""});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -12,9 +12,8 @@ export default function App() {
     console.log(userInfo);
   };
 
-
   return (
-    <div>
+    <div class="grid" id="main-container">
       <EditSection data={userInfo} onChange={handleInputChange}/>
       <Resume user={userInfo} />
     </div>

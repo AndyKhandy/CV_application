@@ -65,7 +65,8 @@ const workFields = [
 export default function EditSection(props){
 
     return (
-        <div>
+        <div id="edit-section">
+          <h1>POKEME</h1>
             <PersonalDetails {...props}/>
             <ExperienceDetails title="Education" {...props} fields={educationFields}/>
             <ExperienceDetails title="Work Experience" {...props} fields={workFields}/>

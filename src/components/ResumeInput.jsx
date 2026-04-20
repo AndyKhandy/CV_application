@@ -1,3 +1,5 @@
+import "../styles/ResumeInput.css"
+
 export default function ResumeInput({
   label,
   type,

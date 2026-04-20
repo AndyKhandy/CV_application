@@ -19,6 +19,12 @@ const resumeFields = [
     name: "phone",
     placeholder: "e.g. +1 (555) 000-0000",
   },
+  {
+    label: "LinkedIn",
+    type: "text",
+    name: "LinkedIn",
+    placeholder: "https://www.linkedin.com/in/andy-khang-ta/",
+  }
 ];
 
 export default function PersonalDetails({ data, onChange }) {

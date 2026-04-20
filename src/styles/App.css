@@ -8,10 +8,36 @@
   display: flex;
 }
 
+.flex-ali {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+
 .flex-col {
   flex-direction: column;
 }
 
-.input input {
-  width: 100%;
+#main-container {
+  grid-template-columns: repeat(2,1fr);
+}
+
+#edit-section, #resume-section {
+  padding: 30px;
+  min-height: 100vh;
+}
+
+#edit-section {
+  border-right: 2px solid black;
+}
+
+#resume-section {
+  padding: 30px 100px;
+}
+
+#resume {
+  border: 2px solid black;
+  min-height: 100%;
 }
