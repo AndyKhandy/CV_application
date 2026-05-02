@@ -1,17 +1,49 @@
-.experience-form, .experience-dropdown{
+.experience-form.open, .experience-dropdown{
   margin-bottom: 10px;
 }
 
-.experience-container {
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 5px;
+.experience-dropdown{
+  justify-content: space-between;
   cursor: pointer;
+}
+
+.experience-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
 }
 
 .experience-form{
   height: 0px;
   overflow: hidden;
+  position: relative;
+}
+
+.experience-entry{
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 10px 5px;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+
+.experience-form button{
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  transition: 200ms ease-in;
+  font-weight: bolder;
+}
+
+
+.experience-form button:hover{
+  scale: 1.2;
+  background-color: var(--main-color);
 }
 
 
@@ -20,7 +52,25 @@
 }
 
 .experience-form.close{
-  animation: accourdian-up 400ms forwards;
+  animation: accourdian-up 200ms forwards;
+}
+
+.form-back, .form-buttons, .add-experience-btn {
+  position: absolute;
+  bottom: 5px;
+}
+
+.add-experience-btn{
+  right: 15px;
+}
+
+.form-back{
+  left: 10px;
+}
+
+.form-buttons{
+  right: 5px;
+  gap: 15px;
 }
 
 @keyframes accourdian-up {

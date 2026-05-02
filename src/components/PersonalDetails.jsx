@@ -14,6 +14,12 @@ const resumeFields = [
     placeholder: "e.g. alex@example.com",
   },
   {
+    label: "Located",
+    type: "text",
+    name: "located",
+    placeholder: "e.g. Euless, TX",
+  },
+  {
     label: "Phone Number",
     type: "tel",
     name: "phone",
@@ -27,17 +33,25 @@ const resumeFields = [
   }
 ];
 
-export default function PersonalDetails({ data, onChange }) {
+export default function PersonalDetails({ data, setData }) {
+
+  const handlePersonalInputChange = (e) => {
+    const { name, value } = e.target;
+    setData((prev) => ({ ...prev, [name]: value }));
+  };
+
   return (
-    <form>
+    <div>
+      <form>
       {resumeFields.map((field) => (
         <ResumeInput
           key={field.name}
           value={data[field.name]}
           {...field}
-          onChange={onChange}
+          onChange={handlePersonalInputChange}
         />
       ))}
     </form>
+    </div>
   );
 }

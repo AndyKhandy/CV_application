@@ -4,6 +4,11 @@
   margin: 0px;
 }
 
+
+:root {
+  --main-color: rgb(53, 141, 168);
+}
+
 .flex {
   display: flex;
 }
@@ -21,7 +26,7 @@
 }
 
 #main-container {
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: 1.7fr 2fr;
 }
 
 #edit-section, #resume-section {
@@ -31,6 +36,19 @@
 
 #edit-section {
   border-right: 2px solid black;
+}
+
+#title{
+  text-align: center;
+}
+
+.header{
+  color: var(--main-color);
+  font-weight: bolder;
+}
+
+#edit-section > div{
+  margin-bottom: 20px;
 }
 
 #resume-section {

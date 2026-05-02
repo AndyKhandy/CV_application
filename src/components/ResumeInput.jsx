@@ -17,7 +17,7 @@ export default function ResumeInput({
         value={value}
         type={type}
         placeholder={placeholder}
-        onChange={onChange}
+        onChange={onChange} required
       />
     </div>
   );
