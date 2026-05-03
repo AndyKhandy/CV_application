@@ -6,7 +6,8 @@
 
 
 :root {
-  --main-color: rgb(53, 141, 168);
+  --main-color-d: rgb(23, 94, 116);
+  --main-color-l: rgb(86, 194, 227);
 }
 
 .flex {
@@ -25,6 +26,10 @@
   flex-direction: column;
 }
 
+.center {
+  text-align: center;
+}
+
 #main-container {
   grid-template-columns: 1.7fr 2fr;
 }
@@ -36,6 +41,7 @@
 
 #edit-section {
   border-right: 2px solid black;
+  position: relative;
 }
 
 #title{
@@ -43,7 +49,7 @@
 }
 
 .header{
-  color: var(--main-color);
+  color: var(--main-color-d);
   font-weight: bolder;
 }
 
@@ -58,4 +64,14 @@
 #resume {
   border: 2px solid black;
   min-height: 100%;
+}
+
+#advice{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.required-marker{
+    color: red;
 }

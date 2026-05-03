@@ -6,30 +6,35 @@ const resumeFields = [
     type: "text",
     name: "name",
     placeholder: "e.g. Alex Rivera",
+    required: true
   },
   {
     label: "Email",
     type: "email",
     name: "email",
     placeholder: "e.g. alex@example.com",
+    required: true
   },
   {
     label: "Located",
     type: "text",
     name: "located",
     placeholder: "e.g. Euless, TX",
+    required: false
   },
   {
     label: "Phone Number",
     type: "tel",
     name: "phone",
     placeholder: "e.g. +1 (555) 000-0000",
+    required: true
   },
   {
     label: "LinkedIn",
     type: "text",
     name: "LinkedIn",
     placeholder: "https://www.linkedin.com/in/andy-khang-ta/",
+    required: false
   }
 ];
 
