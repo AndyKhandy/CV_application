@@ -41,7 +41,7 @@
 }
 
 #edit-section, #resume-section {
-  padding: 30px;
+  padding: 25px;
   min-height: 100vh;
 }
 
@@ -127,19 +127,13 @@
 
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1500px){
+@media screen and (min-width: 1000px) and (max-width: 1350px){
   #main-container {
   grid-template-columns: 1fr 2fr;
   }
 
-  #resume-section{
-    display: grid;
-    place-items: center;
-    padding: 10px;
-  }
-
   #resume{
-    margin: 5px 40px;
+    margin: 5px 20px;
   }
 }
 
