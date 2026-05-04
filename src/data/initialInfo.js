@@ -1,4 +1,6 @@
-export const personalMock = {
+import { getLocal } from "./localStorage";
+
+export const personalData = getLocal("personalInfo") ?? {
   name: "Jake Ryan",
   located: "Arlington, TX",
   email: "Jakesuper@gmail.com",
@@ -6,18 +8,19 @@ export const personalMock = {
   LinkedIn: "linkedin.com/in/jakeRy",
 };
 
-export const educationMock = [
+export const educationData = getLocal("educationInfo") ?? [
   {
     id: crypto.randomUUID(),
     school: "University of Central Florida",
     degree: "Bachelor of Science in Computer Science",
+    gpa: "4.0",
     gradDate: "May 2028",
     courseWork: "Data Structures and Algorithms, Object-Oriented Programming, Intermediate Programming, Discrete Structures",
     type: "education",
   },
 ];
 
-export const workMock = [
+export const workData = getLocal("workInfo") ?? [
   {
     id: crypto.randomUUID(),
     company: "Computing Research Association",
@@ -30,7 +33,7 @@ export const workMock = [
   },
 ];
 
-export const projectMock = [
+export const projectData = getLocal("projectInfo") ?? [
   {
     id: crypto.randomUUID(),
     projectTitle: "the bugHouse",
@@ -46,7 +49,9 @@ export const projectMock = [
     techStack: "JavaScript, Webpack, Weather API, HTML/CSS",
     projectDate: "Dec 2025",
     description:
-      "Built a responsive weather application featuring a UI inspired by Pokemon’s Pok´edex interface. | Integrated the Visual Crossing Weather API to fetch and display real-time conditions and multi-day forecasts. | Managed asynchronous API requests and loading states using JavaScript Promises and async/await. ",
+      "Built a responsive weather application featuring a UI inspired by Pokemon’s Pokedex interface. | Integrated the Visual Crossing Weather API to fetch and display real-time conditions and multi-day forecasts. | Managed asynchronous API requests and loading states using JavaScript Promises and async/await. ",
     type: "project",
   },
 ];
+
+export const lastSavedDate = getLocal("date") ?? "5/4/2026";

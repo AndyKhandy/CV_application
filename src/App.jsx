@@ -5,18 +5,31 @@ import ExperienceDetails from "./components/ExperienceDetails";
 import Resume from "./Resume";
 import { educationFields, workFields, projectFields } from "./data/fields";
 import {
-  personalMock,
-  educationMock,
-  workMock,
-  projectMock,
+  personalData,
+  workData,
+  educationData,
+  projectData,
+  lastSavedDate,
 } from "./data/initialInfo";
+import { changeLocalStorage } from "./data/localStorage";
+import { displaySavedText } from "./data/resumeText";
 
 export default function App() {
-  const [personalInfo, setPersonalInfo] = useState(personalMock);
-  const [educationInfo, setEducationInfo] = useState(educationMock);
-  const [workInfo, setWorkInfo] = useState(workMock);
-  const [projectInfo, setProjectInfo] = useState(projectMock);
+  const [personalInfo, setPersonalInfo] = useState(personalData);
+  const [educationInfo, setEducationInfo] = useState(educationData);
+  const [workInfo, setWorkInfo] = useState(workData);
+  const [projectInfo, setProjectInfo] = useState(projectData);
+  const [messageText, setMessageText] = useState(
+    `Signature: ${personalData.name}| last saved resume on ${lastSavedDate}`,
+  );
 
+  const saveResume = () => {
+    changeLocalStorage("personalInfo", personalInfo);
+    changeLocalStorage("educationInfo", educationInfo);
+    changeLocalStorage("workInfo", workInfo);
+    changeLocalStorage("projectInfo", projectInfo);
+    displaySavedText(personalInfo.name, false, setMessageText);
+  };
 
   return (
     <div className="grid" id="main-container">
@@ -44,6 +57,12 @@ export default function App() {
           fields={projectFields}
           type="project"
         />
+        <h3 id="message">{messageText.split("|").map((split)=>{
+          return <p>{split}</p>
+        })}</h3>
+        <button id="save" onClick={saveResume}>
+          Save Resume
+        </button>
         <h4 id="advice">
           {" "}
           [*Add | to seperate descriptions into bullet points for description

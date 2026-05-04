@@ -69,7 +69,7 @@ button:hover{
 }
 
 .form-buttons, .entry-operations, .entry-main{
-  gap: 15px;
+  gap: 10px;
 }
 
 .add-experience-btn{

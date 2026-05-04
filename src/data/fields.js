@@ -52,11 +52,11 @@ export const educationFields = [
     required: true
   },
   {
-    label: "Field of Study",
-    name: "major",
+    label: "GPA",
+    name: "gpa",
     type: "text",
-    placeholder: "e.g. Computer Science",
-    required: true
+    placeholder: "eg 3.75",
+    required: false
   },
   {
     label: "Graduation Date",

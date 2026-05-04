@@ -35,7 +35,8 @@ export default function Resume({ personal, education, work, projects }) {
               className="resume-experience-subtitle"
               style={{ fontStyle: "italic" }}
             >
-              {educ.degree || "Bachelor's Of Science"}
+              {educ.degree || "Bachelor's Of Science"};{" "}
+              {educ.gpa}
             </p>
 
             <ul>
