@@ -1,8 +1,40 @@
-#resume{
-    padding: 10px;
+
+
+#resume-name{
+    font-size: var(--resume-name);
 }
 
 .resume-header-info{
     justify-content: center;
     gap: 10px;
+}
+
+.resume-personal-info{
+    font-size: var(--font-resume-small);
+}
+
+.resume-experience-subtitle{
+   font-size: var(--font-resume-subtitle);
+}
+
+.resume-experience-title{
+    font-size: var(--font-resume-title);
+}
+
+.resume-section-header{
+    font-size: var(--font-resume-header);
+    margin-top: 20px;
+}
+
+.resume-section{
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.work-main, .education-main, .project-main {
+    justify-content: space-between;
+}
+
+ul{
+  margin-left: 30px;
 }

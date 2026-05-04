@@ -1,12 +1,19 @@
 .input input {
   padding: 5px;
+  font-size: 14px;
 }
 
-.input, .input label{
-    margin-bottom: 5px;
+.input input:focus{
+  outline: var(--main-color-l);
+  border: 2px solid var(--main-color-l);
 }
 
-.input label{
-    font-weight: bold;
-    font-size: 18px;
+.input,
+.input label {
+  margin-bottom: 5px;
+}
+
+.input label {
+  font-weight: bold;
+  font-size: 18px;
 }

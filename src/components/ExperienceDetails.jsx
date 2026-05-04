@@ -13,11 +13,11 @@ export default function ExperienceDetails({
   type,
 }) {
   const [isOpen, setOpen] = useState(false);
-  const [isEditing, setEditing] = useState(true);
+  const [isEditing, setEditing] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [formData, setFormData] = useState(
     fields.reduce((acc, field) => {
-      acc[field] = "";
+      acc[field.name] = "";
       return acc;
     }, {}),
   );
@@ -30,11 +30,11 @@ export default function ExperienceDetails({
   const handleEdit = (experienceObject) => {
     setFormData(experienceObject);
     setEditing(true);
-  }
+  };
 
   const handleRemove = (idRemove) => {
-    setList((prevList)=>prevList.filter((item) => item.id != idRemove));
-  }
+    setList((prevList) => prevList.filter((item) => item.id != idRemove));
+  };
 
   const resetForm = () => {
     setFormData(
@@ -43,19 +43,18 @@ export default function ExperienceDetails({
         return acc;
       }, {}),
     );
-  }
+  };
 
   const handleSubmit = (e, id) => {
     e.preventDefault();
 
-    if(!id){
+    if (!id) {
       const newItem = { ...formData, id: crypto.randomUUID(), type };
       setList((prevList) => [...prevList, newItem]);
-    }
-    else{
+    } else {
       setList((prevList) =>
-        prevList.map((listItem) => 
-          listItem.id == id ? { ...formData } : listItem
+        prevList.map((listItem) =>
+          listItem.id == id ? { ...formData } : listItem,
         ),
       );
     }
@@ -81,13 +80,27 @@ export default function ExperienceDetails({
       <div
         className={`experience-form ${clicked ? (isOpen ? "open" : "close") : null}`}
       >
-        {(list.length > 0 && !isEditing) ? (
+        {list.length > 0 && !isEditing ? (
           <>
-            {list.map((item) => <CreatedExperience experienceObject={item} removeExperience={handleRemove} editExperience={handleEdit} />)}
-            <button className="add-experience-btn" onClick={()=>setEditing(true)}>Add more</button>
+            {list.map((item) => (
+              <CreatedExperience
+                experienceObject={item}
+                removeExperience={handleRemove}
+                editExperience={handleEdit}
+              />
+            ))}
+            <button
+              className="add-experience-btn"
+              onClick={() => {
+                resetForm();
+                setEditing(true);
+              }}
+            >
+              Add more
+            </button>
           </>
         ) : (
-          <form onSubmit={()=>handleSubmit(event,formData?.id)}>
+          <form onSubmit={() => handleSubmit(event, formData?.id)}>
             {fields.map((field) => (
               <ResumeInput
                 key={field.name}
@@ -97,10 +110,22 @@ export default function ExperienceDetails({
               />
             ))}
             <div className="form-buttons flex">
-              <button type="submit" className="form-add">{formData?.id ? "Change" : "Add"}</button>
-              <button type="reset" className="form-reset" onClick={resetForm}>Reset</button>
+              <button type="submit" className="form-add">
+                {formData?.id ? "Change" : "Add"}
+              </button>
+              <button type="reset" className="form-reset" onClick={resetForm}>
+                Reset
+              </button>
             </div>
-            {list.length > 0 && <button type="button" className="form-back" onClick={()=>setEditing(false)}>Go Back</button>}
+            {list.length > 0 && (
+              <button
+                type="button"
+                className="form-back"
+                onClick={() => setEditing(false)}
+              >
+                Go Back
+              </button>
+            )}
           </form>
         )}
       </div>

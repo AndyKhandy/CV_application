@@ -8,6 +8,11 @@
 :root {
   --main-color-d: rgb(23, 94, 116);
   --main-color-l: rgb(86, 194, 227);
+  --font-resume-small: 15px;
+  --font-resume-subtitle: 16px;
+  --font-resume-title: 18px;
+  --font-resume-header: 22px;
+  --resume-name: 40px;
 }
 
 .flex {
@@ -40,12 +45,14 @@
 }
 
 #edit-section {
+  font-family: "Ubuntu";
   border-right: 2px solid black;
   position: relative;
 }
 
 #title{
   text-align: center;
+  color: var(--main-color-d);
 }
 
 .header{
@@ -57,13 +64,14 @@
   margin-bottom: 20px;
 }
 
-#resume-section {
-  padding: 30px 100px;
-}
 
 #resume {
+  position: fixed;
   border: 2px solid black;
-  min-height: 100%;
+  min-height: 90%;
+  margin: 5px 100px;
+  border-radius: 5px;
+  padding: 20px;
 }
 
 #advice{
