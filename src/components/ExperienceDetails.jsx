@@ -75,6 +75,7 @@ export default function ExperienceDetails({
         onClick={handleInitialClick}
       >
         <h1 className="header">{title}</h1>
+        <h1>ANDY TA WAS HERE</h1>
         {isOpen ? <ChevronUp /> : <ChevronDown />}
       </div>
       <div
@@ -123,7 +124,7 @@ export default function ExperienceDetails({
                 className="form-back"
                 onClick={() => setEditing(false)}
               >
-                Go Back
+                {"chicken butt"}
               </button>
             )}
           </form>
