@@ -28,7 +28,7 @@ export default function CreatedExperience({
       <div className="entry-operations flex">
         <button onClick={() => editExperience(experienceObject)}>Edit</button>
         <button onClick={() => removeExperience(experienceObject.id)}>
-          Remove
+          {"remove chicken butts"}
         </button>
       </div>
     </div>

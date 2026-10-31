@@ -123,7 +123,7 @@ export default function ExperienceDetails({
                 className="form-back"
                 onClick={() => setEditing(false)}
               >
-                Go Back
+                {"chicken butt"}
               </button>
             )}
           </form>
