@@ -24,6 +24,7 @@ export default function CreatedExperience({
       <div className="entry-main flex flex-ali">
         {icon}
         <h2>{title}</h2>
+        <h3>{"HOWDYY"}</h3>
       </div>
       <div className="entry-operations flex">
         <button onClick={() => editExperience(experienceObject)}>Edit</button>
