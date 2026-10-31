@@ -75,6 +75,7 @@ export default function ExperienceDetails({
         onClick={handleInitialClick}
       >
         <h1 className="header">{title}</h1>
+        <h1>ANDY TA WAS HERE</h1>
         {isOpen ? <ChevronUp /> : <ChevronDown />}
       </div>
       <div
